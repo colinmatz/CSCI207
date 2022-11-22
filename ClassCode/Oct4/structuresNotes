@@ -1,0 +1,10 @@
+Struct - keep related data items together
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} book;  
+
+creates/defines the actual structure and then also creates an instance of the structure as a variable book
