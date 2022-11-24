@@ -1,4 +1,4 @@
-/* Colin Matz, Nov 9 2022, CSCI 207, Proj1 - Phase 2 V2 */
+/* Colin Matz, Nov 20 2022, CSCI 207, Proj1 - Phase 3 */
 
 void malloc2DArray(int*** A, int rows, int cols);
 void fill2DArray(int** A, int rows, int cols, int upper, int lower);
