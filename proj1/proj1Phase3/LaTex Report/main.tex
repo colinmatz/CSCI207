@@ -9,6 +9,15 @@
 % Table Dependencies
 \usepackage{tabulary} % helps with table width formatting and text wrapping in tables
 \usepackage[none]{hyphenat} % keeps words from breaking up in tables
+% Bibliography Dependencies
+\usepackage[numbers,sort&compress]{natbib} % Ensures Citation Numbers are in order (If Multiple)
+
+% Lists Dependencies/Setup
+
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\diamond$}
+\renewcommand{\labelitemiii}{$\circ$}
+
 
 % Header/Footer Info
 \usepackage[]{fancyhdr} % Header/Footer Setup
@@ -81,7 +90,25 @@
     Blah Blah Blah Blah Blah
 
     \section{Design}\label{sec:design}
-    Blah Blah Blah Blah Blah
+    A list will go here!
+
+    \begin{itemize}
+        \item This is our first line.
+        \item This is our second line which is longer on purpose to see how text wraps within lists!
+        \begin{itemize}
+            \item A bullet within a bullet! Cool!
+            \item Here's another one! Awesome!
+            \begin{itemize}
+                \item Must go Deeper!
+            \end{itemize}
+        \end{itemize}
+        \item A third item for good measure.
+        \begin{enumerate}
+            \item Some people
+            \item Like lists
+            \item Numbered instead!
+        \end{enumerate}
+    \end{itemize}
 
     \subsection{Structure of Programs}\label{subsec:programstructs}
     Blah Blah Blah Blah Blah
@@ -89,12 +116,14 @@
     % test table / example table
     \begin{table}[H]
         \centering
-        \caption[Optional Caption]{Real, local caption}
+        \caption[Optional Caption]{Real, local caption \cite{test}}
         \label{tab:progsdef}
         \begin{tabulary}{\linewidth}{LCR}
+            \\
+            \bfseries Program Name & \bfseries Executable Complied & \bfseries Description of Program
+            \\ \\
             \hline
-            Program Name & Executable Complied & Description of Program \\ 
-            \hline
+            \\
             Test & Test.exe & This program is used in the testing of this table. It uses no parameters but does return 2 values. \\
             Tes2 & Test2.exe & This program is used in the testing of this table. It uses 2 parameters and returns 4 values. \\
         \end{tabulary}
@@ -117,6 +146,15 @@
     \section{conclusion}\label{sec:conclusion}
     Blah Blah Blah Blah Blah
 
-    \section{References}\label{sec:refs}
+    \newpage
+    \bibliographystyle{IEEEtran}
+    \bibliography{refs.bib}\label{refs}
+    \addcontentsline{toc}{section}{\numberline{}References}
+
+    % Appendix (Not Sure If I Need)
+    \newpage
+    \appendix
+    \section{Final Considerations}
+    This is the appendix.
 
 \end{document}
