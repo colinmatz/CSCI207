@@ -3,11 +3,10 @@
 void malloc2DArray(int*** A, int rows, int cols);
 void fill2DArray(int** A, int rows, int cols, int upper, int lower);
 void print2DArray(int** A, int rows, int cols);
-void writeToFile(int* A, int** B, int rows, int cols, char* fN);
+void writeToFile(int** A, int** B, int rows, int cols, char* fN);
 void getDataFromFile(char* fN, int** A, int** B);
 int makeRandNumber(int upper, int lower);
 void fill2DArray2(int** A, int* B, int rows, int cols);
-void mallocIntsArray(int** A, int rows, int cols);
 void checksumA(int*** A, int rows, int cols);
 void checksumB(int*** A, int rows, int cols);
 void multiplySquareMatrices(int R1, int** A, int** B, int** C);

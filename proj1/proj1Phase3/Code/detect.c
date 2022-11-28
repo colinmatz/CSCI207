@@ -58,8 +58,8 @@ int main (int argc, char** argv) {
 	detectColError(fR, fC, C, colErrP);
 	/* finds and sets row value where error occurs */
 	detectRowError(fR, fC, C, rowErrP);
-        /* writes to the output file data to show where error cell is located in matrix provided */
-        writeErrorsToFile(rowErr, colErr, fN2);
+    /* writes to the output file data to show where error cell is located in matrix provided */
+    writeErrorsToFile(rowErr, colErr, fN2);
 	
 	/* FREE BLOCK */
 	free(A);

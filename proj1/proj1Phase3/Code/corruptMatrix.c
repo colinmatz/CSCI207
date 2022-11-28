@@ -64,10 +64,8 @@ int main (int argc, char** argv) {
 	/* corrupts a value at the intersect of passed in row/col by flipping a bit indicated by bitIndex */
 	corruptArray(C, cR, cC, bitIndex);
 	
-	/* ------------------------ */
-	
 	/* writes all data to output file */
-	writeToFile(A, C, fR, fC, fN2);
+	writeToFile(&A, C, fR, fC, fN2);
 		
 	/* FREE BLOCK */
 	free(A);

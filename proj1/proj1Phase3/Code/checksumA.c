@@ -58,10 +58,8 @@ int main (int argc, char** argv) {
 	checksumA(&D, rows, cols);
 	/* adds checksum row to row total */
 	rows = rows + 1;
-	/* Malloc's and sets values in array for rows/cols ints */
-	mallocIntsArray(&E, rows, cols);
 	/* writes all data to output file */
-	writeToFile(E, D, rows, cols, fN2);
+	writeToFile(&E, D, rows, cols, fN2);
 	
 	/* FREE BLOCK */
 	free(E);

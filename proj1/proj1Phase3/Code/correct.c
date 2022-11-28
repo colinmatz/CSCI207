@@ -50,7 +50,7 @@ int main (int argc, char** argv) {
 	/* locates error cell, corrects the error cell, and prepares the array for writing to the output file */
 	findFixErrors(C, fN, fN2, fR, fC);
 	/* writes all data to output file */
-	writeToFile(A, C, fR, fC, fN2);
+	writeToFile(&A, C, fR, fC, fN2);
 	
 	/* FREE BLOCK */
 	free(A);

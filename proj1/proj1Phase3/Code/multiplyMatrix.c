@@ -87,10 +87,8 @@ int main (int argc, char** argv) {
  		exit(0);
  	}
  	
-	/* Malloc's and sets values in array for rows/cols ints */
-	mallocIntsArray(&G, R1, C2);
 	/* writes all data to output file */
-	writeToFile(G, res, R1, C2, fN3);
+	writeToFile(&G, res, R1, C2, fN3);
 	
 	/* FREE BLOCK */
  	free(A);

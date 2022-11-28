@@ -13,7 +13,6 @@
 void malloc2DArray(int*** A, int rows, int cols){
     //split these into two OR call when initialized -----------
     int *ptr, **B;
-    int count = 0;
     //put len into malloc instead of as its own variable to condense maybe? ---------
     int len = (sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
     B = (int **)malloc(len);
@@ -22,11 +21,13 @@ void malloc2DArray(int*** A, int rows, int cols){
     ptr = (int *)(B + rows);
  
     // for loop to point rows pointer to appropriate location in 2D array
-    for(int i = 0; i < rows; i++)
+    for(int i = 0; i < rows; i++) {
         B[i] = (ptr + (cols * i));
-            
+	}
+
     *A = B;
- 
+
+	//free(B);
     return;
        
 } 
@@ -118,33 +119,23 @@ void fill2DArray2(int** A, int* B, int rows, int cols) {
     
 }
 
-/* mallocs a small array to store row and col ints for file writing 
+/* Function that writes the int and matrix data into a file MODIFIED!!!!!
    Function has no return values */
-void mallocIntsArray(int** A, int rows, int cols) {
-	/* creates a small array capable of holding 2 ints */
-	int* B = malloc(2*sizeof(int));
-	/* checks if malloc was successful and prints error message if not successful */
-	if (!B) {
+void writeToFile(int** A, int** B, int rows, int cols, char* fN) {
+	
+	int* C = malloc(2*sizeof(int));
+
+	if (!C) {
 		perror("ERROR ");
 		exit(0);
 	}
-	
-	/* assigns rows and cols count to the array we created */
-	B[0] = rows;
-	B[1] = cols; 
-	
-	/* Copies the array we just made to the array we passed in by reference  */
-	*A = B;
-	
-}
 
-/* Function that writes the int and matrix data into a file MODIFIED!!!!!
-   Function has no return values */
-void writeToFile(int* A, int** B, int rows, int cols, char* fN) {
-	
+	C[0] = rows;
+	C[1] = cols;
+
 	/* first block opens the file in write mode, writes the rows and cols int values and closes the file */
 	FILE* f = fopen(fN, "w");
-	fwrite(A, sizeof(int), 2, f);
+	fwrite(C, sizeof(int), 2, f);
 	fclose(f);
 	
 	/* second block opens the file in append mode (in order to keep previous info added) and writes only the data row by row and closes the file */
@@ -153,6 +144,8 @@ void writeToFile(int* A, int** B, int rows, int cols, char* fN) {
     		fwrite(B[i], sizeof(int), cols, ff);
 	}
 	fclose(ff);
+
+	free(C);
 	
 }
 
@@ -178,6 +171,7 @@ void getDataFromFile(char* fN, int** A, int** B){
 	/* assigns the values read from the file into the rows and cols values */
 	int rows = G[0];
 	int cols = G[1];
+
 	/* mallocs an array to hold the data from the file */
 	int* H = malloc(rows*cols*sizeof(int));
 	/* prints error message if malloc not successful */

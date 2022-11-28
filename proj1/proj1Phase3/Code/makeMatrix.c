@@ -70,10 +70,8 @@ int main (int argc, char** argv) {
 	srand(time(NULL));
 	/* fills the 2D array with random numbers according to inputted parameters */
 	fill2DArray(A, rows, cols, upper, lower);
-	/* Malloc's and sets values in array for rows/cols ints */
-	mallocIntsArray(&C, rows, cols);
 	/* writes all data to output file */
-	writeToFile(C, A, rows, cols, ofn); 
+	writeToFile(&C, A, rows, cols, ofn); 
 	
 	/* FREE BLOCK */
 	free(A);
