@@ -2,6 +2,7 @@ CC=gcc
 CFLAGS=-Wall -g -Wpedantic
 LFLAGS=-lm
 PROGS = makeMatrix printMatrix checksumA checksumB multiplyMatrix corruptMatrix detect correct
+PROGS2 = makeMatrix.exe printMatrix.exe checksumA.exe checksumB.exe multiplyMatrix.exe corruptMatrix.exe detect.exe correct.exe
 CCOPT =-std=c99
 
 all:	$(PROGS)
@@ -58,4 +59,4 @@ correct.o: correct.c genHelp.h
 	$(CC) $(CCOPT) $(CFLAGS) -c correct.c
 
 clean:
-	rm -f *.o $(PROGS) *.dat
+	del -f *.o $(PROGS2) *.dat
