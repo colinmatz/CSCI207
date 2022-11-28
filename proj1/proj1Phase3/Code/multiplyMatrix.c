@@ -20,7 +20,6 @@ int main (int argc, char** argv) {
 	int** E;
 	int* F;
 	int** res;
-	int* G;
 	int opt;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
@@ -88,7 +87,7 @@ int main (int argc, char** argv) {
  	}
  	
 	/* writes all data to output file */
-	writeToFile(&G, res, R1, C2, fN3);
+	writeToFile(res, R1, C2, fN3);
 	
 	/* FREE BLOCK */
  	free(A);
@@ -97,7 +96,6 @@ int main (int argc, char** argv) {
  	free(D);
  	free(E);
  	free(F);
- 	//free(G);
  	free(res);
       	
 }

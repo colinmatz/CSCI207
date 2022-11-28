@@ -16,7 +16,6 @@ int main (int argc, char** argv) {
 	int* C;
 	int** B;
 	int** D;
-	int* E;
 	int opt;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
@@ -59,10 +58,9 @@ int main (int argc, char** argv) {
 	/* adds checksum row to row total */
 	rows = rows + 1;
 	/* writes all data to output file */
-	writeToFile(&E, D, rows, cols, fN2);
+	writeToFile(D, rows, cols, fN2);
 	
 	/* FREE BLOCK */
-	//free(E);
 	free(A);
 	free(B);
 	free(C);

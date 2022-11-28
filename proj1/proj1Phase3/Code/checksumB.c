@@ -15,7 +15,6 @@ int main (int argc, char** argv) {
 	int* A;
 	int* C;
 	int** D;
-	int* E;
 	int opt;
 	int** B;
 	
@@ -59,10 +58,9 @@ int main (int argc, char** argv) {
 	/* adds checksum col to col total */
 	cols = cols + 1;
 	/* writes all data to output file */
-	writeToFile(&E, D, rows, cols, fN2);
+	writeToFile(D, rows, cols, fN2);
 	
-	/* FREE BLOCK */
-	free(E);	
+	/* FREE BLOCK */	
 	free(A);
 	free(B);
 	free(C);

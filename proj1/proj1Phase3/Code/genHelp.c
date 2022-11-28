@@ -121,7 +121,7 @@ void fill2DArray2(int** A, int* B, int rows, int cols) {
 
 /* Function that writes the int and matrix data into a file MODIFIED!!!!!
    Function has no return values */
-void writeToFile(int** A, int** B, int rows, int cols, char* fN) {
+void writeToFile(int** B, int rows, int cols, char* fN) {
 	
 	int* C = malloc(2*sizeof(int));
 

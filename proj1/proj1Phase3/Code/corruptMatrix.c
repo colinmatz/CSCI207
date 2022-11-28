@@ -65,7 +65,7 @@ int main (int argc, char** argv) {
 	corruptArray(C, cR, cC, bitIndex);
 	
 	/* writes all data to output file */
-	writeToFile(&A, C, fR, fC, fN2);
+	writeToFile(C, fR, fC, fN2);
 		
 	/* FREE BLOCK */
 	free(A);

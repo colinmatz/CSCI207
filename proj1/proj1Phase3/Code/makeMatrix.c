@@ -17,7 +17,6 @@ int main (int argc, char** argv) {
 	int lower;
 	int upper;
 	char* ofn;
-	int* C;
     int** A;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
@@ -71,10 +70,9 @@ int main (int argc, char** argv) {
 	/* fills the 2D array with random numbers according to inputted parameters */
 	fill2DArray(A, rows, cols, upper, lower);
 	/* writes all data to output file */
-	writeToFile(&C, A, rows, cols, ofn); 
+	writeToFile(A, rows, cols, ofn); 
 	
 	/* FREE BLOCK */
 	free(A);
-	//free(C);
 	
 }

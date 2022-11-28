@@ -3,7 +3,7 @@
 void malloc2DArray(int*** A, int rows, int cols);
 void fill2DArray(int** A, int rows, int cols, int upper, int lower);
 void print2DArray(int** A, int rows, int cols);
-void writeToFile(int** A, int** B, int rows, int cols, char* fN);
+void writeToFile(int** B, int rows, int cols, char* fN);
 void getDataFromFile(char* fN, int** A, int** B);
 int makeRandNumber(int upper, int lower);
 void fill2DArray2(int** A, int* B, int rows, int cols);
