@@ -11,25 +11,23 @@
 #include "genHelp.h"
 
 void malloc2DArray(int*** A, int rows, int cols){
-    //split these into two OR call when initialized -----------
-    int *ptr, **B;
-    //put len into malloc instead of as its own variable to condense maybe? ---------
-    int len = (sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
-    B = (int **)malloc(len);
- 
+	// mallocs main 2D array
+    int** B = (int **)malloc(sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
+	if (!B) {
+		perror("malloc2DArray ERROR: ");
+		exit(1);
+	}
     // ptr is now pointing to the first element in of 2D array
-    ptr = (int *)(B + rows);
- 
+    int* ptr = (int *)(B + rows);
     // for loop to point rows pointer to appropriate location in 2D array
     for(int i = 0; i < rows; i++) {
         B[i] = (ptr + (cols * i));
 	}
-
+	// This gives the passed in pointer for A the array by reference (Now pointer A in MAIN points to the array)
     *A = B;
-
-	//free(B);
-    return;
-       
+	// No free needed because the passed in pointer from MAIN will point to the 2D array made in this function
+	// Therefore no memory is leaked after this program runs :)
+    return;  
 } 
 
 int makeRandNumber(int upper, int lower) {
