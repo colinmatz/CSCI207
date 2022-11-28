@@ -62,7 +62,7 @@ int main (int argc, char** argv) {
 	writeToFile(&E, D, rows, cols, fN2);
 	
 	/* FREE BLOCK */
-	free(E);
+	//free(E);
 	free(A);
 	free(B);
 	free(C);

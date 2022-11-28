@@ -97,7 +97,7 @@ int main (int argc, char** argv) {
  	free(D);
  	free(E);
  	free(F);
- 	free(G);
+ 	//free(G);
  	free(res);
       	
 }

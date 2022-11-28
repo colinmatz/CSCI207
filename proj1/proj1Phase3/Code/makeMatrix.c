@@ -75,6 +75,6 @@ int main (int argc, char** argv) {
 	
 	/* FREE BLOCK */
 	free(A);
-	free(C);
+	//free(C);
 	
 }
