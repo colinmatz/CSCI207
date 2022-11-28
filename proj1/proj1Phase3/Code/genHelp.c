@@ -39,18 +39,27 @@ void fill2DArray(int** A, int rows, int cols, int upper, int lower) {
         }
     }
 }
-
+/* function goes through a passed in array and prints each value from the array out to the user */
 void print2DArray(int** A, int rows, int cols) {
+	int runningTemp = 0; /* Value to track running total of characters read from array */
     for(int j=0; j<rows; j++) {
         for(int i=0; i<cols; i++) {
-                printf("%d\t", A[j][i]);
-        } printf("\n");
+				int temp = 0; /* variable to track total characters read from each cell in array */
+                temp = printf("%d\t", A[j][i]); 
+				runningTemp = runningTemp + temp;
+        } printf("\n"); /* Creates next line for the next row */
     }
-    
+	if (runningTemp == 0) {
+		printf("Could not read any data from the array given... Please try another array!\n");
+		exit(10); /* Exit value 10 - "ERROR: No readable data in array given!" */
+	}
+	else {
+		return;
+	}
 } 
 
 
-/* Function that sums the values and addes them to the new row added to the matrix being checkSum'd 
+/* Function that sums the values and adds them to the new row added to the matrix being checkSum'd 
    Function has no return values */
 void checksumA(int*** A, int rows, int cols) {
 	/* Creates an array and makes it the passed in array */
