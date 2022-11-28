@@ -15,7 +15,7 @@ void malloc2DArray(int*** A, int rows, int cols){
     int** B = (int **)malloc(sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
 	if (!B) {
 		perror("malloc2DArray ERROR: ");
-		exit(10);
+		exit(10); /* Exit value 10 - "ERROR: Could not Malloc memory needed with current matrix configuration supplied!" */
 	}
     // ptr is now pointing to the first element in of 2D array
     int* ptr = (int *)(B + rows);

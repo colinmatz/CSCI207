@@ -59,4 +59,4 @@ correct.o: correct.c genHelp.h
 	$(CC) $(CCOPT) $(CFLAGS) -c correct.c
 
 clean:
-	del -f *.o $(PROGS2) *.dat
+	rm -f *.o $(PROGS) *.dat *.txt
