@@ -15,7 +15,7 @@ void malloc2DArray(int*** A, int rows, int cols){
     int** B = (int **)malloc(sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
 	if (!B) {
 		perror("malloc2DArray ERROR: ");
-		exit(1);
+		exit(10);
 	}
     // ptr is now pointing to the first element in of 2D array
     int* ptr = (int *)(B + rows);
@@ -30,19 +30,14 @@ void malloc2DArray(int*** A, int rows, int cols){
     return;  
 } 
 
-int makeRandNumber(int upper, int lower) {
-    int number = (rand() % (upper - lower + 1)) + lower;    
-    return number;
-}
-
+/* Function creates a random number for each spot in the array and assigns that random value to its position in the array*/
 void fill2DArray(int** A, int rows, int cols, int upper, int lower) {
     for(int j=0; j<rows; j++) {
         for(int i=0; i<cols; i++) {
-            int number = makeRandNumber(upper, lower);
-            A[j][i] = number;
+			// the random statement to the right ensures that the random number is within the range specified by user inputs
+            A[j][i] = (int) ((rand() % (upper - lower + 1)) + lower);
         }
     }
-    
 }
 
 void print2DArray(int** A, int rows, int cols) {
