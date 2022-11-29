@@ -8,6 +8,7 @@
 #include <string.h>
 #include <getopt.h>
 #include <unistd.h>
+#include <time.h>
 #include "genHelp.h"
 
 void malloc2DArray(int*** A, int rows, int cols){
@@ -39,6 +40,36 @@ void fill2DArray(int** A, int rows, int cols, int upper, int lower) {
         }
     }
 }
+
+void fill2DArray3(int** A, int rows, int cols, int upper, int lower, char* fN) {
+    FILE* f = fopen(fN, "r");
+
+	int* ptrR = &rows;
+	int* ptrC = &cols;
+
+	fread(ptrR, sizeof(int), 1, f);
+	fread(ptrC, sizeof(int), 1, f);
+
+	for(int j=0; j<rows; j++) {
+        for(int i=0; i<cols; i++) {
+			int* arrayPtr = &A[j][i];
+            fread(arrayPtr, sizeof(int), 1, f);
+        }
+    }
+
+	fclose(f);
+}
+
+void getRowsCols (int* rows, int* cols, char* fN){
+	FILE* f = fopen(fN, "r");
+
+	fread(rows, sizeof(int), 1, f);
+	fread(cols, sizeof(int), 1, f);
+
+	fclose(f); 
+	return;
+}
+
 /* function goes through a passed in array and prints each value from the array out to the user */
 void print2DArray(int** A, int rows, int cols) {
 	int runningTemp = 0; /* Value to track running total of characters read from array */

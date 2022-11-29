@@ -14,10 +14,15 @@ int main (int argc, char** argv) {
 
 	/* SETTING INITIAL VALUES */
 	int opt;
-	int* D;
-	int* E;
+	//int* D;
+	//int* E;
 	char* fN;
-	int** B;
+	int** B = NULL;
+	int rows = 0;
+	int cols = 0;
+	int* ptrR = &rows;
+	int* ptrC = &cols;
+	//int* ptrB = &B;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
 	if (argc == 3){
@@ -40,26 +45,16 @@ int main (int argc, char** argv) {
 		printf("Usage: ./printMatrix -i <fileName>\n");
 		exit(0);
 	}
-	
-	/* CALLING ALL FUNCTIONS NEEDED WITH ERROR CHECKING */
-	
-	/* collects data from input file */
-	getDataFromFile(fN, &D, &E);
-	
-	/* setting rows and cols variables */
-	int rows = D[0];
-	int cols = D[1];
-	
-	/* Function that mallocs a 2D array*/
+
+	getRowsCols (ptrR, ptrC, fN); 
+
 	malloc2DArray(&B, rows, cols);
-	/* Fills 2D array with data collected from file and put into input array */
-	fill2DArray2(B, E, rows, cols);
-	/* prints data to console */
+
+	fill2DArray3(B, rows, cols, 9, 1, fN);
+
 	print2DArray(B, rows, cols);
 	
-	/* FREE BLOCK */
+	// FREE BLOCK 
 	free(B);
-	free(D);
-	free(E);
 	
 }
