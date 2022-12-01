@@ -12,11 +12,10 @@ int main (int argc, char** argv) {
 	/* SETTING INITIAL VALUES */
 	char* fN;
 	char* fN2;
-	int* A;
-	int* C;
 	int** B;
-	int** D;
 	int opt;
+	int rows = 0;
+	int cols = 0;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
 	if (argc == 5){
@@ -39,31 +38,19 @@ int main (int argc, char** argv) {
 	/* CALLING ALL FUNCTIONS NEEDED WITH ERROR CHECKING */
 	
 	/* collects data from input file */
-	getDataFromFile(fN, &A, &C);
-	
-	/* setting rows and cols variables */
-	int rows = A[0];
-	int cols = A[1];
-	
-	/* Function that mallocs a 2D array*/
-	malloc2DArray(&B, rows, cols);
-	/* Fills 2D array with data collected from file and put into input array */
-	fill2DArray2(B, C, rows, cols);
+	getRowsCols (&rows, &cols, fN);
 	/* Function that mallocs a 2D array with added row for checksum*/
-	malloc2DArray(&D, rows + 1, cols);
-	/* Fills 2D array with data collected from file and put into input array */
-	fill2DArray2(D, C, rows, cols);
+	malloc2DArray(&B, rows + 1, cols);
+
+	getArray(B, rows, cols, fN);
+
 	/* creates and adds values to an added checksum row */
-	checksumA(&D, rows, cols);
-	/* adds checksum row to row total */
-	rows = rows + 1;
+	checksumA(&B, rows, cols);
+
 	/* writes all data to output file */
-	writeToFile(D, rows, cols, fN2);
+	writeToFile(B, rows + 1, cols, fN2);
 	
 	/* FREE BLOCK */
-	free(A);
 	free(B);
-	free(C);
-	free(D);
 
 }

@@ -4,14 +4,12 @@ void malloc2DArray(int*** A, int rows, int cols);
 void fill2DArray(int** A, int rows, int cols, int upper, int lower);
 void print2DArray(int** A, int rows, int cols);
 void writeToFile(int** B, int rows, int cols, char* fN);
-void getDataFromFile(char* fN, int** A, int** B);
-void fill2DArray2(int** A, int* B, int rows, int cols);
-void fill2DArray3(int** A, int rows, int cols, int upper, int lower, char* fN);
+void getRowsCols (int* rows, int* cols, char* fN);
+void getArray(int** A, int rows, int cols, char* fN);
 void checksumA(int*** A, int rows, int cols);
 void checksumB(int*** A, int rows, int cols);
 void multiplySquareMatrices(int R1, int** A, int** B, int** C);
 void multiplyRegularMatrices(int R1, int R2, int C2, int** res, int** B, int** E);
-void getRowsCols (int* rows, int* cols, char* fN);
 
 /* NEW FUNCTION PROTOTYPES FOR PHASE 2 */
 void corruptArray(int** A, int row, int col, int bitIndex);

@@ -41,7 +41,7 @@ void fill2DArray(int** A, int rows, int cols, int upper, int lower) {
     }
 }
 
-void fill2DArray3(int** A, int rows, int cols, int upper, int lower, char* fN) {
+void getArray(int** A, int rows, int cols, char* fN) {
     FILE* f = fopen(fN, "r");
 
 	int* ptrR = &rows;
@@ -135,22 +135,6 @@ void checksumB(int*** A, int rows, int cols) {
     	*A = C;
     	
 }
-// WORK ON REMOVING THIS AND HAVING GET DATA JUST RETURN THE TWO MALLOCS FROM READING THE FILE --------
-/* Function that fills a malloc'd array that fills another array with values from 1st array 
-   Function has no return values */
-void fill2DArray2(int** A, int* B, int rows, int cols) {
-    /* creating local variable count */
-    int count = 0;
-    /* for loop goes through normal array and assigns values to a 2D array that is passed into the function by reference */
-    for(int j=0; j<rows; j++) {
-    	for(int i=0; i<cols; i++) {
-    		int number = B[count];
-        	A[j][i] = number;
-        	count++;
-        }
-    }
-    
-}
 
 /* Function that writes the int and matrix data into a file MODIFIED!!!!!
    Function has no return values */
@@ -181,46 +165,6 @@ void writeToFile(int** B, int rows, int cols, char* fN) {
 	free(C);
 	
 }
-
-/* Function that gets the row/col data first and puts them in one array, then gets the matrix data and puts that into another array  MODIFIED!!!
-   Function has no return values */
-void getDataFromFile(char* fN, int** A, int** B){
-	/* opens the file in read mode */
-	FILE *f = fopen(fN, "r");
-	/* checks if file opened and returns error message if not */
-	if (!f) {
-		perror("ERROR ");
-		exit(0);
-	}
-	/* mallocs a small array to store 2 int values */
-	int* G = malloc(2*sizeof(int));
-	/* checks if array is malloc'd correctly and prints error if not */
-	if (!G) {
-		perror("ERROR ");
-		exit(0);
-	}
-	/* reads int from file */
-	fread(G, sizeof(int), 2, f);
-	/* assigns the values read from the file into the rows and cols values */
-	int rows = G[0];
-	int cols = G[1];
-
-	/* mallocs an array to hold the data from the file */
-	int* H = malloc(rows*cols*sizeof(int));
-	/* prints error message if malloc not successful */
-	if (!H) {
-		perror("ERROR ");
-		exit(0);
-	}
-	/* reads all the actual data from the file using the amount of rows and cols to determine the amount of data cells */
-	fread(H, sizeof(int), rows*cols, f);
-	/* closes the file */
-	fclose(f);
-	/* copies the arrays that we made to their respective arrays passed into the function by reference */
-	*A = G;
-	*B = H;
-	
-} 
 
 /* Function that takes data from multiple arrays, computes values and stores them in an array for matrices of same size (eg. 2x2 2x2)
    Function has no return values */
