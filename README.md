@@ -1,9 +1,31 @@
 # CSCI207
-Repository for class assignments for CSCI207
+## Repository for class assignments for CSCI207
 
-Things to get done:
+----
 
-read rows and call right into rows and cols using *rows and *cols as the pass-in parameter
+## Things to get done:
 
-CURRENTLY WORKING ON: MUST CHANGE ALL ROWS/COLS FOR FUNCTION CALLS AS THEY HAVE BEEN CONVERTED TO BE A POINTER CURRENTLY FOR USE IN GETDATA
+...
 
+----
+
+## CHANGELOG EXTENDED:
+
+###### 3.1:
+*Commit - 29ff3c50a3089b4d9066c484f988a70c4f493d54*
+
+++ getRowsCols func that reads rows and cols from file directly into variables in main
+
+++ getArray func that reads array from file right into already malloc'd array in main
+
+++ Implemented getRowsCols and getArray in all programs except for makeMatrix
+
+~~ Changed testScript.sh to randomly create value variables to use in called commands
+
+-- getDataFromFile func
+
+-- fill2DArray2 func
+
+-- fill2DArray3 func
+
+-----------------------------------------------------
