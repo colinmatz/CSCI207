@@ -1,0 +1,17 @@
+Hello Dr. Jones
+
+Within this folder I have given the following script files that can be run along with their function below:
+
+testScript.sh ........... runs the commands as given as the testing standard by Dr. Jones
+testScript2.sh .......... runs a loop (iteration count specified through a variable within the script called caseCount)
+                          which runs the same command structure as testScript.sh but puts random values in the commands
+                          that are run to produce different outcomes without having to manually run the test command
+                          multiple times. This will be used for the report, but will left in to be tested later. This
+                          script will also run MAKE as well as MAKE CLEAN and will leave one new file behind called 
+                          testScriptLog.txt which will contain all debugging information on the previous executions.
+testScript.ps1 ......... The same file as testScript.sh just made into a powershell executable for use on windows.
+testScript2.ps1 .......... The same file as testScript2.sh just made into a powershell executable for use on windows.
+
+I hope you enjoy my take on Proj 1 - Phase 3, thank you for your teachings this semester. Have a great winter break!
+
+                          
