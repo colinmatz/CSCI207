@@ -12,6 +12,13 @@ testScript2.sh .......... runs a loop (iteration count specified through a varia
 testScript.ps1 ......... The same file as testScript.sh just made into a powershell executable for use on windows.
 testScript2.ps1 .......... The same file as testScript2.sh just made into a powershell executable for use on windows.
 
+****
+
+NOTE: IN ORDER TO USE MAKE/MAKE CLEAN IN WINDOWS, ENSURE TO CHANGE THE CLEAN STATEMENT TO USE "del" INSTEAD OF "rm"
+      AS WELL AS CHANGING THE "PROGS" VARIABLE IN THE CLEAN STATEMENT TO THE "PROGS2"! 
+
+****
+
 I hope you enjoy my take on Proj 1 - Phase 3, thank you for your teachings this semester. Have a great winter break!
 
                           
