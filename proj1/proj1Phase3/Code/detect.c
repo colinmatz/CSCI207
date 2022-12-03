@@ -37,7 +37,7 @@ int main (int argc, char** argv) {
 		}
 		else {
 			printf("Usage: ./detect -i <input file name> -o <output file name>\n");
-			exit(0);
+			exit(84);
 		}
 	
 	getRowsCols (&rows, &cols, fN);

@@ -40,7 +40,7 @@ int main (int argc, char** argv) {
 	}
 	else {
 		printf("Usage: ./multiplyMatrix -a <Input 1 File Name> -b <Input 2 File Name> -o <Output File Name>\n");
-		exit(0);
+		exit(84);
 	}
 	
 	/* CALLING ALL FUNCTIONS NEEDED */
@@ -65,25 +65,32 @@ int main (int argc, char** argv) {
 
 	/* Function that mallocs a 2D array*/
 	malloc2DArray(&res, rows1, cols2);
+
+	fill2DArray(res, rows1, cols2, 0, 0);
+
+	print2DArray(res, rows1, cols2);
+
+	printf("sizeof(int *) * rows) + (sizeof(int) * (cols * rows) = %lu\n", (sizeof(int *) * rows1) + (sizeof(int) * (cols2 * rows1)));
 	
 	/* checks if the matrices are square (ex. 2x2 & 2x2, 3x3 & 3x3, etc.) */
 	if (rows1 == rows2 && cols1 == cols2) {
-		/* multiplies the matricies together and sets res array as the result array from the function */
-		multiplySquareMatrices(rows1, res, B, E);
-	}
+		/* multiplies the matrices together and sets res array as the result array from the function */
+		//multiplySquareMatrices(rows1, res, B, E);
+		multiplyRegularMatrices(rows1, rows2, cols2, res, B, E);
+	} 
  	/* checks if the matrices are compatible to be multiplied together */
- 	if (cols1 == rows2) {
- 		/* multiplies the matricies together and sets res array as the result array from the function */
+ 	else if (cols1 == rows2) {
+ 		/* multiplies the matrices together and sets res array as the result array from the function */
  		multiplyRegularMatrices(rows1, rows2, cols2, res, B, E);
-        }
- 	/* error message to be printed if matricies cannot be multiplied (such that if they are not compatible) */
+    }
+ 	/* error message to be printed if matrices cannot be multiplied (such that if they are not compatible) */
  	else {
- 		printf("ERROR: The matrices provided cannot be multiplied!\nPlease ensure Matrix 1's Column number matches the value of Matrix 2's Row number OR that they are BOTH equal in size (2x2, etc..)\n");
- 		exit(0);
+ 		printf("ERROR: Please ensure Matrix 1's Column number matches the value of Matrix 2's Row number OR that they are BOTH equal in size (2x2, etc..)\n");
+ 		exit(83);
  	}
  	
 	/* writes all data to output file */
-	writeToFile(res, rows1, cols2, fN3);
+	writeToFile(res, &rows1, &cols2, fN3);
 	
 	/* FREE BLOCK */
  	free(B);

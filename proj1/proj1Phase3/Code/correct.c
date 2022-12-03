@@ -33,7 +33,7 @@ int main (int argc, char** argv) {
 		}
 		else {
 			printf("Usage: ./correct -i <input file name> -o <output file name>\n");
-			exit(0);
+			exit(84);
 		}
 	
 	getRowsCols (&rows, &cols, fN);
@@ -45,7 +45,7 @@ int main (int argc, char** argv) {
 	/* locates error cell, corrects the error cell, and prepares the array for writing to the output file */
 	findFixErrors(C, fN, fN2, rows, cols);
 	/* writes all data to output file */
-	writeToFile(C, rows, cols, fN2);
+	writeToFile(C, &rows, &cols, fN2);
 	
 	/* FREE BLOCK */
 	free(C);

@@ -33,12 +33,12 @@ int main (int argc, char** argv) {
 		}
 		else {
 			printf("Usage: ./printMatrix -i <fileName>\n");
-		exit(0);
+		exit(84);
 		}
 	}
 	else {
 		printf("Usage: ./printMatrix -i <fileName>\n");
-		exit(0);
+		exit(84);
 	}
 
 	getRowsCols (&rows, &cols, fN); 

@@ -32,7 +32,7 @@ int main (int argc, char** argv) {
 	}
 	else {
 		printf("Usage: ./checkSumA -a <Input File Name> -o <Output File Name>\n");
-		exit(0);
+		exit(84);
 	}
 	
 	/* CALLING ALL FUNCTIONS NEEDED WITH ERROR CHECKING */
@@ -45,10 +45,10 @@ int main (int argc, char** argv) {
 	getArray(B, rows, cols, fN);
 
 	/* creates and adds values to an added checksum row */
-	checksumA(&B, rows, cols);
-
+	checksumA(B, rows, cols);
+	rows += 1;
 	/* writes all data to output file */
-	writeToFile(B, rows + 1, cols, fN2);
+	writeToFile(B, &rows, &cols, fN2);
 	
 	/* FREE BLOCK */
 	free(B);

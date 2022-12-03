@@ -53,12 +53,12 @@ int main (int argc, char** argv) {
 		}
 		else {
 			printf("Usage: ./makeMatrix -m <Row Amount> -n <Col Amount> -l <Lower Bound for Numbers> -u <Upper Bound for Numbers> -o <Output Filename> -d [Default Values Flag]\n");
-		exit(0);
+		exit(84);
 		}
 	}
 	else {
 		printf("Usage: ./makeMatrix -m <Row Amount> -n <Col Amount> -l <Lower Bound for Numbers> -u <Upper Bound for Numbers> -o <Output Filename> -d [Default Values Flag]\n");
-		exit(0);
+		exit(84);
 	}
 	
 	/* CALLING ALL FUNCTIONS NEEDED WITH ERROR CHECKING */
@@ -70,9 +70,10 @@ int main (int argc, char** argv) {
 	/* fills the 2D array with random numbers according to inputted parameters */
 	fill2DArray(A, rows, cols, upper, lower);
 	/* writes all data to output file */
-	writeToFile(A, rows, cols, ofn); 
+	writeToFile(A, &rows, &cols, ofn); 
 	
 	/* FREE BLOCK */
 	free(A);
 	
+	exit(0);
 }

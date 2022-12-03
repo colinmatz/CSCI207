@@ -53,7 +53,7 @@ corruptMatrix.o: corruptMatrix.c genHelp.h
 	$(CC) $(CCOPT) $(CFLAGS) -c corruptMatrix.c
 	
 detect.o: detect.c genHelp.h
-	$(CC) $(CCOPT) $(CFLAGS) -c detect.c $(LFLAGS)
+	$(CC) $(CCOPT) $(CFLAGS) -c detect.c
 	
 correct.o: correct.c genHelp.h
 	$(CC) $(CCOPT) $(CFLAGS) -c correct.c
