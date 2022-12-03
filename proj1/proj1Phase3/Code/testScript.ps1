@@ -1,5 +1,9 @@
-./makeMatrix -m 5 -n 4 -l 1 -u 10 -o a.dat
-./makeMatrix -m 4 -n 6 -l 1 -u 10 -o b.dat
+# Colin Matz / 12-2-2022 / Proj 1 - Phase 3
+# THIS SCRIPT FILE IS MADE USING THE STANDARD GIVEN FOR SCRIPT FILE USAGE IN PHASE 3 BY DR. JONES
+
+./makeMatrix.exe -m 5 -n 4 -l 1.0 -u 1.00001 -o a.dat
+Start-Sleep -s 1
+./makeMatrix.exe -m 4 -n 3 -l 1.0 -u 1.00001 -o b.dat
 
 ./printMatrix.exe -i a.dat
 Write-Host " "
