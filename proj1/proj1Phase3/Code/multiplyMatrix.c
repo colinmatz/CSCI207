@@ -65,21 +65,9 @@ int main (int argc, char** argv) {
 
 	/* Function that mallocs a 2D array*/
 	malloc2DArray(&res, rows1, cols2);
-
-	fill2DArray(res, rows1, cols2, 0, 0);
-
-	print2DArray(res, rows1, cols2);
-
-	printf("sizeof(int *) * rows) + (sizeof(int) * (cols * rows) = %lu\n", (sizeof(int *) * rows1) + (sizeof(int) * (cols2 * rows1)));
 	
-	/* checks if the matrices are square (ex. 2x2 & 2x2, 3x3 & 3x3, etc.) */
-	if (rows1 == rows2 && cols1 == cols2) {
-		/* multiplies the matrices together and sets res array as the result array from the function */
-		//multiplySquareMatrices(rows1, res, B, E);
-		multiplyRegularMatrices(rows1, rows2, cols2, res, B, E);
-	} 
  	/* checks if the matrices are compatible to be multiplied together */
- 	else if (cols1 == rows2) {
+ 	if (cols1 == rows2) {
  		/* multiplies the matrices together and sets res array as the result array from the function */
  		multiplyRegularMatrices(rows1, rows2, cols2, res, B, E);
     }

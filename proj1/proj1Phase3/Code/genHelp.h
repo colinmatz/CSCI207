@@ -8,7 +8,6 @@ void getRowsCols (int* rows, int* cols, char* fN);
 void getArray(int** A, int rows, int cols, char* fN);
 void checksumA(int** A, int rows, int cols);
 void checksumB(int** A, int rows, int cols);
-void multiplySquareMatrices(int R1, int** A, int** B, int** C);
 void multiplyRegularMatrices(int R1, int R2, int C2, int** A, int** B, int** C);
 
 /* NEW FUNCTION PROTOTYPES FOR PHASE 2 */

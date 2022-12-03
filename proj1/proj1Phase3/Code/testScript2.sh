@@ -1,11 +1,8 @@
-./makeMatrix -m 4 -n 4 -l 1 -u 9 -o a.dat
+# Colin Matz / 12-2-2022 / Proj 1 - Phase 3
+# THIS SCRIPT FILE IS MADE USING THE STANDARD GIVEN FOR SCRIPT FILE USAGE IN PHASE 3 BY DR. JONES
+./makeMatrix -m 5 -n 4 -l 1.0 -u 1.00001 -o a.dat
 sleep 1
-./makeMatrix -m 4 -n 4 -l 1 -u 9 -o b.dat
-
-./multiplyMatrix -a a.dat -b b.dat -o c.dat
-
-./printMatrix -i c.dat
-printf '\n'
+./makeMatrix -m 4 -n 3 -l 1.0 -u 1.00001 -o b.dat
 
 ./printMatrix -i a.dat
 printf '\n'

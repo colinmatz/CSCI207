@@ -12,33 +12,24 @@
 #include <time.h>
 #include "genHelp.h"
 
-void malloc2DArray(int*** A, int rows, int cols){
-
-	/* ---------------------------------------------- */
-	/* mallocs main 2D array */
-    int** B = (int **)malloc(sizeof(int *) * rows) + (sizeof(int) * (cols * rows));
+void malloc2DArray(int***a , int rows, int cols) {
+ 
+    int len = sizeof(int *) * rows + sizeof(int) * cols * rows;
+    int** B = (int **)malloc(len);
 	if (!B) {
 		perror("malloc2DArray ERROR: ");
-		exit(113); /* Exit value 113 - "ERROR: Could not Malloc memory needed with current matrix configuration supplied!" */
+		exit(113); /* Exit Value 113 - "ERROR: Could not Malloc memory needed with current matrix configuration supplied!" */
 	}
-
-	/* ---------------------------------------------- */
-
-    /* ptr is now pointing to the first element in of 2D array */
+ 
     int* ptr = (int *)(B + rows);
-    /* for loop to point rows pointer to appropriate location in 2D array */
-    for(int i = 0; i < rows; i++) {
-        B[i] = (ptr + (cols * i));
-	}
-
-	/* ---------------------------------------------- */
-
-	/* This gives the passed in pointer for A the array by reference (Now pointer A in MAIN points to the array) */
-    *A = B;
-	/* No free needed because the passed in pointer from MAIN will point to the 2D array made in this function */
-	/* Therefore no memory is leaked after this program runs :) */
-    return;  
-} 
+ 
+    for(int i = 0; i < rows; i++)
+        B[i] = (ptr + cols * i);
+            
+    *a = B;
+    
+    return;
+}
 
 /* Function creates a random number for each spot in the array and assigns that random value to its position in the array */
 void fill2DArray(int** A, int rows, int cols, int upper, int lower) {
@@ -258,26 +249,6 @@ void writeToFile(int** B, int* rows, int* cols, char* fN) {
 	return;
 }
 
-/* Function that takes data from multiple arrays, computes values and stores them in an array for matrices of same size (eg. 2x2 2x2) */
-/* Function has no return values */
-void multiplySquareMatrices(int R1, int** A, int** B, int** C) { 
-	/* below for loop goes through the array we want to assign values to, and assigns the result of the mathematical equation to multiple the matrices */ 
-	for (int i = 0; i < R1; i++) {
-		for (int j = 0; j < R1; j++) {
-			A[i][j] = 0;
-		    for (int k = 0; k < R1; k++) {
-				printf("A[%d][%d] = %d, B[%d][%d] = %d, C[%d][%d] = %d\n", i, j, A[i][j], i, k, B[i][k], k, j, C[k][j]);
-		        A[i][j] += B[i][k] * C[k][j];
-		    }
-			if (A[i][j] > 100000 || A[i][j] < -100000) {
-				printf("Error: Could not multiply matrices! Please try again or use different parameters.\n");
-				exit(98); /* Exit Value 98 - Cannot multiply matrices, could be an arithmetic error. */
-			}
-		}
-	}
-	return;
-} 
-
 /* Function that takes data from multiple arrays, computes values and stores them in an array for matrices of different size but still compatable (eg. 2x3 3x2) */ 
 /* Function has no return values */
 void multiplyRegularMatrices(int R1, int R2, int C2, int** A, int** B, int** C) {
@@ -288,7 +259,6 @@ void multiplyRegularMatrices(int R1, int R2, int C2, int** A, int** B, int** C) 
 		    for (int j = 0; j < C2; j++) {
 		        A[i][j] = 0;
 		        for (int k = 0; k < R2; k++) {
-					printf("A[%d][%d] = %d, B[%d][%d] = %d, C[%d][%d] = %d\n", i, j, A[i][j], i, k, B[i][k], k, j, C[k][j]);
 		            A[i][j] += B[i][k] * C[k][j];
 		        }
 				if (A[i][j] > 100000 || A[i][j] < -100000) {

@@ -1,3 +1,7 @@
+# Colin Matz / 12-2-2022 / Proj 1 - Phase 3
+# THIS SCRIPT IS MADE TO SHOW THIS CODE WORKING WITH RANDOM COMBINATIONS AND IS BASED OFF OF TESTSCRIPT2.SH
+# THIS SCRIPT ALSO CHECKS FOR CUSTOM EXIT ERROR CODES FROM EACH FUNC AND RESPONDS ACCORDINGLY
+
 rows1=$((2 + $RANDOM % 5))
 cols1=$((2 + $RANDOM % 5))
 rows2=$cols1
@@ -226,7 +230,7 @@ check_for_errors $test
 test=$?
 check_for_errors $test
 
-#------------------------
+# -------- PRINT BLOCK --------
 
 ./printMatrix -i a.dat
 test=$?

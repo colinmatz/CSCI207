@@ -17,7 +17,7 @@ int main (int argc, char** argv) {
 	int lower;
 	int upper;
 	char* ofn;
-    int** A;
+    	int** A;
 	
 	/* PARSING IN VALUES CODE (GETOPT) */
 	if (argc == 2 || argc == 11){
