@@ -55,7 +55,6 @@ int main (int argc, char** argv) {
 
 	getArray(C, rows, cols, fN);
 	
-	/* NEW FUNCTION IMPLEMENTED FOR PHASE 2*/
 	/* corrupts a value at the intersect of passed in row/col by flipping a bit indicated by bitIndex */
 	corruptArray(C, cR, cC, bitIndex);
 	

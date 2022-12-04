@@ -1,0 +1,17 @@
+
+
+C:\Code> .\printMatrix.exe -i a.dat
+
+1       1       1
+1       1       1
+1       1       1
+1       1       1
+
+C:\Code> .\corruptMatrix.exe -r 2 -c 3 -b 15 -i a.dat -o b.dat
+
+C:\Code> .\printMatrix.exe -i b.dat
+
+1       1       1
+1       1       32769
+1       1       1
+1       1       1
