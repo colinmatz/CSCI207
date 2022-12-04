@@ -42,7 +42,7 @@
             \textsc{\LARGE Colin Matz \\
             Junior B.S. Information Technology, \\ 
             Cybersecurity Minor \\
-            November 23, 2022} \\
+            December 2, 2022} \\
         \end{center}
     \end{titlepage}
 
@@ -129,7 +129,7 @@
 
     \begin{table}[H]
         \centering
-        \caption[Program Definitions]{Program Definitions}
+        \caption[Script Definitions]{Script Definitions}
         \label{tab:scriptscomp}
         \begin{tabulary}{\linewidth}{CC}
             \\
@@ -207,7 +207,7 @@
     function on the array that was created to remove it from the RAM ensuring that no memory is lost upon the program ending.
     \subsection{printMatrix Functionality}\label{subsec:printMatrixFunc}
     The program printMatrix is used to print the matrix given out to the terminal. It achieves this by first pulling the row and column count from
-    the file. Using this information, the program can then malloc and array big enough to transfer the whole matrix into the newly created array. Once
+    the file. Using this information, the program can then malloc an array big enough to transfer the whole matrix into the newly created array. Once
     this is done, the program will go through and print out each number in the array using the rows and columns as coordinates to navigate within the
     array. Upon completion, the program will use the free() command to ensure the memory used for the allocated array is not lost.
     \subsection{checksum Functionality}\label{subsec:checksumABFunc}
@@ -267,7 +267,7 @@
     \subsection{.sh and .ps1 Functionality}\label{subsec:shPs1Func}
     The script files included in the program are meant to make the process of testing this program faster, easier and more expansive. The .ps1 files are meant for windows systems
     allowing the use of powershell to run the script. The .sh files are used in Unix systems such as MacOS and Linux systems using the bash terminal. These scripts are meant to provide
-    random values for each iteration of running the full sequence of programs. The amount of iterations can be changes by changing the respective values within each and the
+    random values for each iteration of running the full sequence of programs. The amount of iterations can be changed by changing the respective values within each and the
     testScript2 files will create a new file which lists the total amount of all tracked errors as well as the amount of successful program completions. 
 
     \section{Error Checking}\label{sec:exitErrs}
@@ -309,8 +309,8 @@
             96 & corruptArray & Error bitIndex value invalid! \\
             95 & corruptArray & Error matrix was not successfully corrupted! \\
             94 & writeErrorsToFile & Error could not format row int error value for file writing! \\
-            93 & writeErrorsToFile & Error Could not format col int error value for file writing! \\
-            92 & writeErrorsToFile & Error Could not open file! \\
+            93 & writeErrorsToFile & Error could not format col int error value for file writing! \\
+            92 & writeErrorsToFile & Error could not open file! \\
             91 & writeErrorsToFile & Error writing row beginning string to file! \\
             90 & writeErrorsToFile & Error writing row error data to file! \\
             89 & writeErrorsToFile & Error writing col beginning string to file! \\
