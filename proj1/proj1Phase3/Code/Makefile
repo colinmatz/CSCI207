@@ -1,3 +1,5 @@
+# uncomment if running makefile in windows!
+#SHELL=cmd
 CC=gcc
 CFLAGS=-Wall -g -Wpedantic
 LFLAGS=-lm
@@ -59,4 +61,5 @@ correct.o: correct.c genHelp.h
 	$(CC) $(CCOPT) $(CFLAGS) -c correct.c
 
 clean:
+# use rm if in unix and del if in windows, PROGS is for Unix and PROGS2 is for windows
 	del -f *.o $(PROGS2) *.dat *.txt
