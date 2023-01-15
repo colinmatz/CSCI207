@@ -11,3 +11,5 @@ The printMatrix function can be used at any time to print a matrix after it has 
 Within the project's code files, I have included 4 script files. Two of which are for Windows operating system and the other two were developed for use in Linux Ubuntu. One of each script files should run a single test while the other of each runs a specified amount which can be changed by changing a variable within the script file.
 
 NOTE: THIS PROJECT WAS WRITTEN MAINLY FOR USE IN A LINUX UBUNTU ENVIRONMENT. Therefore, to use the make commands within windows, you will have to change the clean statement to use DEL instead of RM used in Linux as well as the PROGS variable must be changed to the PROGS2 variable for the clean statement (adds .exe to program names). 
+
+There is also a folder containing LaTex files and a written report which goes into further detail on what the various programs are, how they work and the problem being addressed by these programs.
