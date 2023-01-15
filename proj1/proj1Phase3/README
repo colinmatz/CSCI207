@@ -1,0 +1,13 @@
+Hello! This folder contains my final project for my recent C/C++ programming course. 
+
+For this final project, we were to create a program that would make a matrix, create checksum rows in the various matrices, multiply them, simulate a one bit corruption event, detect the location of the corruption within the data and then correct the data using the checksum'd rows created after making the matrices.
+
+To simulate the project as intended, it would be advised to run the programs in the following order:
+
+makeMatrix (for matrix A) > makeMatrix (for matrix B) > checkSumA > checkSumB > multiplyMatrix > corruptMatrix > detect > correct
+
+The printMatrix function can be used at any time to print a matrix after it has been created.
+
+Within the project's code files, I have included 4 script files. Two of which are for Windows operating system and the other two were developed for use in Linux Ubuntu. One of each script files should run a single test while the other of each runs a specified amount which can be changed by changing a variable within the script file.
+
+NOTE: THIS PROJECT WAS WRITTEN MAINLY FOR USE IN A LINUX UBUNTU ENVIRONMENT. Therefore, to use the make commands within windows, you will have to change the clean statement to use DEL instead of RM used in Linux as well as the PROGS variable must be changed to the PROGS2 variable for the clean statement (adds .exe to program names). 
